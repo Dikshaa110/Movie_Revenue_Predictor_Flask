@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request
 import pandas as pd
-import pickle           # ✅ Used to load model_features.pkl
-import cloudpickle      # ✅ Used to load your .pkl model
+import pickle            # Still used for loading feature columns
+import joblib            # ✅ Use joblib instead of cloudpickle
 
 app = Flask(__name__)
 
-# ✅ Load the trained model (saved using cloudpickle)
-with open("movie_revenue_model.pkl", "rb") as f:
-    model = cloudpickle.load(f)
+# ✅ Load the trained model saved using joblib
+model = joblib.load("movie_revenue_model.joblib")
 
 # ✅ Load the feature column names used during training
 with open('model_features.pkl', 'rb') as f:
