@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: movie-revenue-predictor
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    pythonVersion: 3.12.3
+    env: python
+    plan: free
+    region: oregon
