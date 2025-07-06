@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Revenue Predictor 🎬 | AI-Powered Box Office Forecast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* CSS will go here - see next section */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="text-warning">🎬</span> Movie Revenue Predictor
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('form') }}">Predict</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="modal" data-bs-target="#infoModal">How It Works</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1 class="animate__animated animate__fadeInDown">Predict Your Movie's Success</h1>
+            <p class="lead animate__animated animate__fadeIn animate__delay-1s">AI-powered box office revenue forecasting for filmmakers and producers</p>
+            <a href="{{ url_for('form') }}" class="btn btn-warning btn-lg mt-4 animate__animated animate__pulse animate__infinite">
+                Start Prediction 
+            </a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="feature-icon mb-3">📊</div>
+                        <h3>Data-Driven</h3>
+                        <p>Our algorithm analyzes thousands of movies to provide accurate revenue predictions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="feature-icon mb-3">⚡</div>
+                        <h3>Fast Results</h3>
+                        <p>Get instant predictions without complicated setup or waiting.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="feature-icon mb-3">🎯</div>
+                        <h3>Actionable Insights</h3>
+                        <p>Understand what factors most impact your movie's potential success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Showcase -->
+    <section class="movie-showcase py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-5 text-white">Featured Movie Analysis</h2>
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='movie_banner5.jpg') }}" class="img-fluid" alt="Movie Analysis" height="100px" width="300px">
+                    <div class="movie-overlay">
+                        <div class="movie-info">
+                            <h5>Blockbuster Analysis</h5>
+                            <p>Revenue: $250M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='movie_banner2.jpg') }}" class="img-fluid" alt="Movie Analysis">
+                    <div class="movie-overlay">
+                        <div class="movie-info">
+                            <h5>Sci-Fi Success</h5>
+                            <p>Revenue: $180M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='movie_banner3.jpg') }}" class="img-fluid" alt="Movie Analysis">
+                    <div class="movie-overlay">
+                        <div class="movie-info">
+                            <h5>Romantic Hit</h5>
+                            <p>Revenue: $120M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="movie-card">
+                    <img src="{{ url_for('static', filename='movie_banner4.jpg') }}" class="img-fluid" alt="Movie Analysis">
+                    <div class="movie-overlay">
+                        <div class="movie-info">
+                            <h5>Action Thriller</h5>
+                            <p>Revenue: $210M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Predict Your Movie's Revenue?</h2>
+            <a href="{{ url_for('form') }}" class="btn btn-warning btn-lg">
+                Get Started Now 
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Movie Revenue Predictor</h5>
+                    <p>Helping filmmakers make data-driven decisions since 2023.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2023 TerraBox. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal (same as your existing one) -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">About the App</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    This app uses machine learning to estimate the revenue a movie might generate based on:
+                    <ul class="mt-2">
+                        <li>Production budget</li>
+                        <li>Genre and runtime</li>
+                        <li>Cast popularity</li>
+                        <li>Release timing</li>
+                        <li>Historical performance of similar films</li>
+                    </ul>
+                    <p class="mt-2">Simply click "Start Prediction" and fill out the form to get your customized forecast!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
