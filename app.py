@@ -6,7 +6,7 @@ import joblib            # ✅ Use joblib instead of cloudpickle
 app = Flask(__name__)
 
 # ✅ Load the trained model saved using joblib
-model = joblib.load("movie_revenue_model.joblib")
+model = joblib.load("movie_revenue_model_CLEAN.joblib")
 
 # ✅ Load the feature column names used during training
 with open('model_features.pkl', 'rb') as f:
